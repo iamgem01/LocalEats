@@ -39,31 +39,23 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Liên kết</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/products">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors">
-                    Sản phẩm
-                  </a>
+                <Link href="/products" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Sản phẩm
                 </Link>
               </li>
               <li>
-                <Link href="/farmers">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors">
-                    Người làm
-                  </a>
+                <Link href="/farmers" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Người làm
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors">
-                    Về chúng tôi
-                  </a>
+                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Về chúng tôi
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors">
-                    Cách thức hoạt động
-                  </a>
+                <Link href="/how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Cách thức hoạt động
                 </Link>
               </li>
             </ul>
@@ -113,15 +105,11 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© 2025 LocalEats. All rights reserved.</p>
             <div className="flex gap-4">
-              <Link href="/privacy">
-                <a className="hover:text-foreground transition-colors">
-                  Chính sách bảo mật
-                </a>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">
+                Chính sách bảo mật
               </Link>
-              <Link href="/terms">
-                <a className="hover:text-foreground transition-colors">
-                  Điều khoản sử dụng
-                </a>
+              <Link href="/terms" className="hover:text-foreground transition-colors">
+                Điều khoản sử dụng
               </Link>
             </div>
           </div>
