@@ -8,6 +8,12 @@ import Products from "@/pages/Products";
 import Farmers from "@/pages/Farmers";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
+import ProductDetail from "@/pages/ProductDetail.tsx";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Singup";
+import Dashboard from "@/pages/dashboard/page.tsx";
+import Checkout from "@/pages/Checkout"
+
 
 function Router() {
   return (
@@ -16,7 +22,14 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/farmers" component={Farmers} />
       <Route path="/about" component={About} />
-      <Route component={NotFound} />
+        <Route path= "/product/:id" component= {ProductDetail} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/home" component={Dashboard} />
+        <Route path="/checkout" component={Checkout} />
+
+
+        <Route component={NotFound} />
     </Switch>
   );
 }

@@ -63,31 +63,44 @@ export default function Header() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleLanguage}
-              data-testid="button-language-toggle"
-            >
-              <Globe className="h-5 w-5" />
-            </Button>
+            {/* Login Button */}
+            <Link href="/login">
+                <Button variant="outline" data-testid="button-login">
+                    {language === "vi" ? "Đăng nhập" : "Login"}
+                </Button>
+            </Link>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative"
-              data-testid="button-cart"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              {cartCount > 0 && (
-                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">
-                  {cartCount}
-                </span>
-              )}
-            </Button>
+            {/* Signup Button */}
+            <Link href="/signup">
+                <Button variant="default" data-testid="button-signup">
+                    {language === "vi" ? "Đăng ký" : "Sign up"}
+                </Button>
+            </Link>
+            <div className="flex items-center gap-2">
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleLanguage}
+                    data-testid="button-language-toggle"
+                >
+                    <Globe className="h-5 w-5" />
+                </Button>
 
-            {/* Mobile Menu Toggle */}
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="relative"
+                    data-testid="button-cart"
+                >
+                    <ShoppingCart className="h-5 w-5" />
+                    {cartCount > 0 && (
+                        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">
+        {cartCount}
+      </span>
+                    )}
+                </Button>
+
+                {/* Mobile Menu Toggle */}
             <Button
               variant="ghost"
               size="icon"

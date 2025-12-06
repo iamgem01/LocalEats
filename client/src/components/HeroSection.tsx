@@ -29,8 +29,8 @@ export default function HeroSection() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-white mb-6 leading-tight">
-            Xem Tận Mắt,{" "}
-            <span className="text-primary">Mua Tận Gốc</span>
+              Chuẩn nguồn gốc, {" "}
+            <span className="text-primary">trọn an tâm.</span>
           </h1>
 
           {/* Subheading */}
