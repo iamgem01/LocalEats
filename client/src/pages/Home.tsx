@@ -11,109 +11,134 @@ import { ArrowRight } from "lucide-react";
 
 // Import images
 import veggiesImage from "@assets/generated_images/Fresh_Vietnamese_market_vegetables_5b6cbbbf.png";
-import dragonFruitImage from "@assets/generated_images/Dragon_fruit_farm_aerial_47ecbec9.png";
-import coffeeImage from "@assets/generated_images/Vietnamese_coffee_farmer_working_e7265474.png";
-import honeyFarmerImage from "@assets/generated_images/Vietnamese_honey_farmer_portrait_82a0dfd5.png";
+import MucImage from "@assets/generated_images/MucRimMe.png";
+import CaBoImage from "@assets/generated_images/CaBo.png";
+import BaTamImage from "@assets/generated_images/BaTam.png";
+import MienBacImage from "@assets/generated_images/MienBac.png";
+import ComImage from "@assets/generated_images/Com.png";
+import ChaBoImage from "@assets/generated_images/ChaBo.png";
 import basketArtisanImage from "@assets/generated_images/Vietnamese_basket_weaving_artisan_1bb90a2f.png";
-import riceTerraceImage from "@assets/generated_images/Vietnamese_rice_terraces_farmer_fb8b00e8.png";
+import riceTerraceImage from "@assets/generated_images/img.png";
+import MienTrung from "@assets/generated_images/img_1.png";
+import MamNem from "@assets/generated_images/MamNem.png";
+import BanhMe from "@assets/generated_images/BanhMeDN.png";
+import NamO from "@assets/generated_images/TranNgocVinh.png";
+import Sol from "@assets/generated_images/HuynhDucSol.png";
+import Btrang from "@assets/generated_images/BanhtrangTL.png";
+
+
 
 export default function Home() {
   // todo: remove mock functionality
   const featuredProducts = [
     {
       id: 1,
-      name: "Rau cải hữu cơ Đà Lạt",
-      price: 45000,
-      image: veggiesImage,
-      region: "Đà Lạt",
-      farmer: "Anh Minh",
+      name: "Chả bò Đà Nẵng loại 1",
+      price: 280000,
+      image: ChaBoImage,
+      region: "Đà Nẵng",
+      farmer: "Bà Tâm",
       groupBuyAvailable: true,
       organic: true,
     },
     {
       id: 2,
-      name: "Thanh long ruột đỏ",
-      price: 35000,
-      image: dragonFruitImage,
-      region: "Bình Thuận",
-      farmer: "Chị Lan",
+      name: "Mực Rim Me Dì Danh",
+      price: 145000,
+      image: MucImage,
+      region: "Đà Nẵng",
+      farmer: "Dì Danh",
       groupBuyAvailable: false,
       organic: true,
     },
     {
       id: 3,
-      name: "Cà phê Arabica Đà Lạt",
-      price: 280000,
-      image: coffeeImage,
-      region: "Đà Lạt",
-      farmer: "Anh Tuấn",
-      groupBuyAvailable: true,
-      organic: false,
-    },
-    {
-      id: 4,
-      name: "Mật ong rừng nguyên chất",
-      price: 150000,
-      image: honeyFarmerImage,
-      region: "Tây Nguyên",
-      farmer: "Anh Hùng",
+      name: "Bánh khô mè lức trắng hộp 250g",
+      price: 145000,
+      image: BanhMe,
+      region: "Đà Nẵng",
+      farmer: "Cơ sở Bà Liễu Mẹ",
       groupBuyAvailable: false,
       organic: true,
     },
-  ];
+    {
+      id: 4,
+      name: "Mắm nêm Dì Cẩn",
+      price: 45000,
+      image: MamNem,
+      region: "Đà Nẵng",
+      farmer: "Dì Cẩn",
+      groupBuyAvailable: true,
+      organic: true,
+    },
+
+    {
+        id: 5,
+        name: "Bánh tráng Túy Loan",
+        price: 170000,
+        image: Btrang,
+        region: "Đà Nẵng",
+        farmer: "Làng nghề Túy Loan",
+        groupBuyAvailable: false,
+        organic: true,
+    },
+];
 
   const featuredFarmers = [
     {
       id: 1,
-      name: "Anh Tuấn",
-      photo: honeyFarmerImage,
-      location: "Đà Lạt, Lâm Đồng",
-      specialty: "Mật ong rừng",
+      name: "Bà Tâm",
+      photo: BaTamImage,
+      location: "Thuận Phước, Đà Nẵng",
+      specialty: "Chả bò, nem, tré đặc biệt các loại",
       productCount: 8,
-      bio: "20 năm kinh nghiệm nuôi ong lấy mật từ hoa rừng tự nhiên",
+      bio: "Để giới thiệu đặc sản chả bò Đà Nẵng đến gần hơn với khách hàng, để mọi người đều có thể cảm nhận đúng chuẩn hương vị đặc trưng món ăn này",
     },
-    {
-      id: 2,
-      name: "Chị Mai",
-      photo: basketArtisanImage,
-      location: "Hội An, Quảng Nam",
-      specialty: "Thủ công mỹ nghệ",
-      productCount: 12,
-      bio: "Nghệ nhân làng nghề truyền thống, chuyên đan lát tre nứa",
-    },
-    {
-      id: 3,
-      name: "Anh Minh",
-      photo: riceTerraceImage,
-      location: "Sa Pa, Lào Cai",
-      specialty: "Gạo hữu cơ",
-      productCount: 5,
-      bio: "Canh tác ruộng bậc thang theo phương pháp truyền thống",
-    },
+      {
+          id: 2,
+          name: "Cơ sở Bà Liễu Mẹ",
+          photo: Sol,
+          location: "Cẩm Lệ, Đà Nẵng",
+          specialty: "Bánh khô mè truyền thống",
+          productCount: 12,
+          bio: "Làng nghề gia truyền hơn 70 năm — giữ lửa nghề bánh khô mè Đà Nẵng, nổi tiếng nhờ vị giòn tan, hương mè rang và đường mạch nha đặc trưng.",
+      }
+,
+      {
+          id: 2,
+          name: "Cơ sở Nam Ô",
+          photo: NamO,
+          location: "Nam Ô, Đà Nẵng",
+          specialty: "Nước mắm Nam Ô truyền thống",
+          productCount: 12,
+          bio: "Hơn 30 năm giữ nghề — sản xuất nước mắm thủ công, ủ cá cơm than theo phương pháp truyền thống, cam kết: không hóa chất, không chất bảo quản, không chất tạo màu, không chất tạo mùi. Được cấp nhãn hiệu tập thể bảo hộ chỉ dẫn địa lý Nam Ô.",
+      },
+
   ];
 
-  const regions = [
-    {
-      name: "Miền Bắc",
-      image: riceTerraceImage,
-      productCount: 200,
-      description: "Nổi tiếng với chè Thái Nguyên, gạo Sapa và các đặc sản vùng núi",
-    },
-    {
-      name: "Miền Trung",
-      image: coffeeImage,
-      productCount: 250,
-      description: "Cà phê Đà Lạt, rau củ cao nguyên và hải sản tươi ngon",
-    },
-    {
-      name: "Miền Nam",
-      image: dragonFruitImage,
-      productCount: 300,
-      description: "Trái cây nhiệt đới, gạo ST25 và đặc sản đồng bằng sông Cửu Long",
-    },
-  ];
+    const regions = [
+        {
+            name: "Miền Bắc",
+            image: ComImage,
+            productCount: 200,
+            description: "Đặc sản nổi bật: chè Thái Nguyên, cốm Hà Nội, thịt trâu gác bếp",
+        },
+        {
+            name: "Miền Trung",
+            image: MienTrung,
+            productCount: 250,
+            description: "Đặc sản đậm vị: nước mắm, mực khô, chả bò, mè xửng",
+        },
+        {
+            name: "Miền Nam",
+            image: MienBacImage,
+            productCount: 300,
+            description: "Đặc sản miền sông nước: trái cây sấy, bánh pía, khô cá lóc",
+        },
+    ];
 
-  return (
+
+    return (
     <div className="min-h-screen bg-background">
       <Header />
       
@@ -208,21 +233,27 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                {
-                  name: "Chị Hương",
-                  location: "Hà Nội",
-                  text: "Mua rau ở LocalEats yên tâm vì biết rõ nguồn gốc. Video người làm rất chi tiết, cảm giác như được đến tận vườn!",
-                },
-                {
-                  name: "Anh Phong",
-                  location: "TP.HCM",
-                  text: "Tính năng mua chung rất hay, vừa tiết kiệm chi phí vừa được giao lưu với nhiều người cùng sở thích.",
-                },
-                {
-                  name: "Chị Lan",
-                  location: "Đà Nẵng",
-                  text: "Đặc sản về tươi ngon, đúng như mô tả. Quan trọng là được hỗ trợ trực tiếp người nông dân địa phương!",
-                },
+                  {
+                      name: "Trung Minh (Sinh viên)",
+                      location: "Đà Nẵng",
+                      text: "Mỗi lần thèm chả Bò mà không biết chỗ mua uy tín, sợ mua bị chém giá.Ứng dụng này ra mắt thì quá hợp lý mà còn giá cả so với thị trường còn okela, không làm mình thất vọng.",
+                  },
+                  {
+                      name: "Sarah (Du khách)",
+                      location: "Singapore",
+                      text: "I found LocalEats during my trip. It was wonderful to discover authentic specialties with clear stories from local artisans.",
+                  },
+                  {
+                      name: "Anh Bình (Người dùng địa phương)",
+                      location: "Đà Nẵng",
+                      text: "Muốn gửi đặc sản cho người thân xa quê, đặt trên LocalEats cho chắc. Đúng hàng chuẩn, đáng tin cậy, truy xuất được nguồn gốc.",
+                  },
+                  {
+                      name: "Cơ sở Mè Xửng Bà Liễu Mẹ",
+                      location: "Đà Nẵng",
+                      text: "Tham gia LocalEats giúp cơ sở giới thiệu mè xửng truyền thống đến nhiều khách hơn. Có thêm kênh bán ổn định, lại được hỗ trợ truyền thông.",
+                  },
+
               ].map((testimonial, index) => (
                 <div
                   key={index}

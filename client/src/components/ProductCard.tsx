@@ -58,13 +58,17 @@ export default function ProductCard({
 
                 {/* Badges */}
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
-                    <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
+                    <Badge
+                        variant="secondary"
+                        className="bg-amber-200/80 text-amber-900 backdrop-blur-sm"
+                    >
                         <MapPin className="mr-1 h-3 w-3" />
                         {region}
                     </Badge>
+
                     {organic && (
                         <Badge className="bg-primary/90 backdrop-blur-sm text-primary-foreground">
-                            Hữu cơ
+                            Đã kiểm chứng
                         </Badge>
                     )}
                 </div>
@@ -98,7 +102,7 @@ export default function ProductCard({
           <span className="text-2xl font-bold text-primary" data-testid={`text-price-${id}`}>
             {price.toLocaleString('vi-VN')}đ
           </span>
-                    <span className="text-sm text-muted-foreground">/kg</span>
+                    <span className="text-sm text-muted-foreground">/cái</span>
                 </div>
             </CardContent>
 

@@ -19,7 +19,7 @@ export const BuyerMarketplace = () => {
         <div className="space-y-6">
             <div className="flex justify-between items-end">
                 <div>
-                    <h2 className="text-2xl font-bold">Chợ Nông Sản</h2>
+                    <h2 className="text-2xl font-bold">Chợ Đặc Sản</h2>
                     <p className="text-muted-foreground">Khám phá đặc sản từ các vùng miền</p>
                 </div>
                 <div className="relative">
@@ -40,8 +40,8 @@ export const BuyerMarketplace = () => {
                             </div>
                         </div>
                         <div className="p-4">
-                            <div className="text-xs text-primary font-medium mb-1">Đà Lạt • Anh Tuấn</div>
-                            <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Cà phê Arabica Cầu Đất</h3>
+                            <div className="text-xs text-primary font-medium mb-1">Đà Nẵng • Anh Tuấn</div>
+                            <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Cà phê </h3>
                             <div className="flex justify-between items-center mt-3">
                                 <span className="font-semibold">280.000đ</span>
                                 <Button size="sm" onClick={handleBuyNow}>Mua ngay</Button>

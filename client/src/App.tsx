@@ -11,9 +11,11 @@ import NotFound from "@/pages/not-found";
 import ProductDetail from "@/pages/ProductDetail.tsx";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Singup";
+import SignupSeller from "@/pages/SellerSignup";
+
 import Dashboard from "@/pages/dashboard/page.tsx";
 import Checkout from "@/pages/Checkout"
-
+import { LanguageProvider } from "@/lib/useLanguage"
 
 function Router() {
   return (
@@ -25,6 +27,8 @@ function Router() {
         <Route path= "/product/:id" component= {ProductDetail} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/signup-seller" component={SignupSeller} />
+
         <Route path="/home" component={Dashboard} />
         <Route path="/checkout" component={Checkout} />
 
@@ -37,10 +41,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <LanguageProvider>
+          <TooltipProvider>
+              <Toaster />
+              <Router />
+          </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

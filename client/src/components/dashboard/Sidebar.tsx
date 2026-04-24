@@ -19,8 +19,8 @@ interface SidebarProps {
 
 export default function Sidebar({ user, activeTab, setActiveTab, onLogout }: SidebarProps) {
     const buyerLinks = [
-        { id: 'market', label: 'Chợ nông sản', icon: ShoppingBag },
-        { id: 'scan-qr', label: 'Quét QR & Câu chuyện', icon: QrCode },
+        { id: 'market',label: 'Chợ đặc sản', icon: ShoppingBag },
+        { id: 'scan-qr',label: 'Quét QR & Câu chuyện', icon: QrCode },
         { id: 'orders', label: 'Đơn hàng của tôi', icon: LayoutDashboard },
     ];
 
@@ -65,7 +65,7 @@ export default function Sidebar({ user, activeTab, setActiveTab, onLogout }: Sid
                     <div>
                         <p className="text-sm font-medium">{user.name}</p>
                         <p className="text-xs text-muted-foreground capitalize">
-                            {user.role === 'seller' ? 'Nông dân / Đối tác' : 'Thành viên'}
+                            {user.role === 'seller' ? 'Hộ Sản xuất / Đối tác' : 'Thành viên'}
                         </p>
                     </div>
                 </div>

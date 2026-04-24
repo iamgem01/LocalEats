@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from '@/components/dashboard/Sidebar';
 import {
     SellerDashboard,
@@ -20,48 +20,72 @@ import {
     ChevronRight,
     Truck,
     CheckCircle
-} from 'lucide-react'; // Đã thêm icons cho đơn hàng
+} from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-// --- MOCK DATA ---
 const MOCK_USER_BUYER = { name: "Nguyễn Văn A", role: "buyer", avatar: "A" };
-const MOCK_USER_SELLER = { name: "Nông Trại Anh Tuấn", role: "seller", avatar: "T" };
+const MOCK_USER_SELLER = { name: "Hộ sản xuất B", role: "seller", avatar: "B" };
 
 // --- COMPONENT: LỊCH SỬ ĐƠN HÀNG CHO NGƯỜI MUA ---
 const BuyerOrderHistory = () => {
     const orders = [
         {
             id: "LE8829",
-            date: "06/12/2023",
-            total: "350.000đ",
+            date: "06/12/2025",
+            total: "200.000đ",
             status: "shipping",
-            shop: "Nông trại Anh Tuấn",
+            shop: "Bà Tâm - Đà Nẵng",
             items: [
-                { name: "Cà phê Arabica Cầu Đất", quantity: 1, image: "☕" },
-                { name: "Rau cải hữu cơ", quantity: 2, image: "🥬" }
+                { name: "Chả bò", quantity: 2, image: "🥩" },
+                { name: "Nem đặc sản", quantity: 1, image: "🌿" }
             ]
         },
         {
             id: "LE8801",
-            date: "01/12/2023",
-            total: "150.000đ",
+            date: "01/12/2025",
+            total: "120.000đ",
             status: "completed",
-            shop: "Vườn Mật Ong Tây Nguyên",
+            shop: "Cơ sở Bà Liễu",
             items: [
-                { name: "Mật ong rừng nguyên chất", quantity: 1, image: "🍯" }
+                { name: "Bánh khô mè", quantity: 3, image: "🍪" }
             ]
         },
         {
             id: "LE8790",
-            date: "28/11/2023",
-            total: "450.000đ",
+            date: "28/11/2025",
+            total: "180.000đ",
             status: "pending",
-            shop: "Gạo Ngon Sóc Trăng",
+            shop: "Dì Danh",
             items: [
-                { name: "Gạo ST25 (Túi 5kg)", quantity: 2, image: "🍚" }
+                { name: "Mực rim me", quantity: 1, image: "🦑" },
+                { name: "Mắm nêm", quantity: 1, image: "🥫" }
+            ]
+        },
+        {
+            id: "LE8785",
+            date: "20/11/2025",
+            total: "150.000đ",
+            status: "completed",
+            shop: "Cơ sở Nam Ô",
+            items: [
+                { name: "Nước mắm Nam Ô", quantity: 2, image: "🧂" }
+            ]
+        },
+        {
+            id: "LE8780",
+            date: "15/11/2025",
+            total: "100.000đ",
+            status: "shipping",
+            shop: "Hộ làm khô cá một nắng",
+            items: [
+                { name: "Cá một nắng", quantity: 1, image: "🐟" }
             ]
         }
     ];
+
+
+
+
 
     const getStatusStyle = (status: string) => {
         switch(status) {
@@ -140,7 +164,6 @@ const BuyerOrderHistory = () => {
     );
 };
 
-// --- COMPONENT: CHATBOT CHO NGƯỜI MUA ---
 const BuyerChatSupport = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -199,7 +222,7 @@ const BuyerChatSupport = () => {
                         LE
                     </div>
                     <div className="bg-white p-3 rounded-2xl rounded-tl-none text-sm shadow-sm border border-gray-100 max-w-[80%]">
-                        💡 Gợi ý: Hôm nay có <b>Cà phê Arabica Cầu Đất</b> đang được giảm giá 15% đấy ạ!
+                        💡 Gợi ý: Hôm nay có <b>Chả bò Đà Nẵng loại 1</b> đang được giảm giá 15% đấy ạ!
                     </div>
                 </div>
 
@@ -242,13 +265,25 @@ const BuyerChatSupport = () => {
 };
 
 export default function Dashboard() {
-    const [role, setRole] = useState("buyer");
-    const [activeTab, setActiveTab] = useState("market");
+    const [role, setRole] = useState(() => {
+        const savedRole = localStorage.getItem("userRole");
+        return savedRole === "seller" ? "seller" : "buyer";
+    });
+    const [activeTab, setActiveTab] = useState(role === "seller" ? "dashboard" : "market");
     const [, setLocation] = useLocation();
+
+    useEffect(() => {
+        const savedRole = localStorage.getItem("userRole");
+        if (savedRole) {
+            setRole(savedRole);
+            if (savedRole === 'seller' && activeTab === 'market') setActiveTab('dashboard');
+        }
+    }, []);
 
     const currentUser = role === "seller" ? MOCK_USER_SELLER : MOCK_USER_BUYER;
 
     const handleLogout = () => {
+        localStorage.removeItem("userRole"); // Xóa session khi đăng xuất
         console.log("Logged out");
         setLocation("/login");
     };
@@ -287,18 +322,20 @@ export default function Dashboard() {
                         {role === 'seller' ? 'Kênh Người Bán' : 'Xin chào, ' + currentUser.name}
                     </h1>
 
-                    <div className="flex items-center gap-2 bg-muted p-1 rounded-lg">
+                    {/* Nút chuyển đổi nhanh để Test (Dev mode) */}
+                    <div className="flex items-center gap-2 bg-muted p-1 rounded-lg opacity-50 hover:opacity-100 transition-opacity">
+                        <span className="text-[10px] px-2 text-muted-foreground uppercase font-bold">Dev Mode</span>
                         <button
                             onClick={() => { setRole('buyer'); setActiveTab('market'); }}
                             className={`px-3 py-1 text-xs rounded-md transition-all ${role === 'buyer' ? 'bg-white shadow text-black' : 'text-muted-foreground'}`}
                         >
-                            Buyer View
+                            Buyer
                         </button>
                         <button
                             onClick={() => { setRole('seller'); setActiveTab('dashboard'); }}
                             className={`px-3 py-1 text-xs rounded-md transition-all ${role === 'seller' ? 'bg-white shadow text-black' : 'text-muted-foreground'}`}
                         >
-                            Seller View
+                            Seller
                         </button>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Target, Award, ArrowRight } from "lucide-react";
-import heroImage from "@assets/generated_images/Vietnamese_rice_terraces_farmer_fb8b00e8.png";
+import heroImage from "@assets/generated_images/coverrr.png";
 
 export default function About() {
   const values = [
@@ -29,44 +29,60 @@ export default function About() {
     },
   ];
 
-  const team = [
-    {
-      name: "Nguyễn Văn A",
-      role: "Người sáng lập",
-      bio: "15 năm kinh nghiệm trong lĩnh vực nông nghiệp và phát triển nông thôn",
-    },
-    {
-      name: "Trần Thị B",
-      role: "Giám đốc Vận hành",
-      bio: "Chuyên gia về chuỗi cung ứng và logistics, đảm bảo sản phẩm tươi ngon nhất",
-    },
-    {
-      name: "Lê Văn C",
-      role: "Trưởng phòng Chất lượng",
-      bio: "Kỹ sư nông nghiệp, đảm bảo tiêu chuẩn an toàn thực phẩm",
-    },
-  ];
+    const team = [
+        {
+            name: "Tô Bảo Khánh",
+            role: "Người sáng lập & Quản lý chiến lược",
+            bio: "Người khởi xướng LocalEats để tìm lại giá trị thật của đặc sản địa phương và xây dựng định hướng dài hạn cho dự án."
+        },
+        {
+            name: "Huỳnh Thị Ngọc Hoài",
+            role: "Quản lý Kinh doanh",
+            bio: "Kết nối với đối tác phân phối; phụ trách đưa sản phẩm vào đúng thị trường và phát triển doanh thu bền vững."
+        },
+        {
+            name: "Trần Thị Bích Ngọc",
+            role: "Quản lý Marketing",
+            bio: "Người đứng sau các câu chuyện thương hiệu, hiểu rõ từng nhóm khách hàng và biến đặc sản địa phương thành trải nghiệm hấp dẫn trên môi trường số."
+        },
+        {
+            name: "Nguyễn Văn Vũ",
+            role: "Quản lý Kỹ thuật",
+            bio: "Phụ trách nền tảng công nghệ và trải nghiệm người dùng, đảm bảo mọi chức năng vận hành mượt mà để kết nối sản phẩm – người bán – người mua."
+        },
+        {
+            name: "Nguyễn Thị Nguyệt",
+            role: "Quản lý Tài chính",
+            bio: "Giữ nhịp tài chính cho dự án, kiểm soát chi phí và tối ưu dòng tiền để LocalEats phát triển ổn định và bền vững."
+        }
+
+    ];
 
   const milestones = [
-    {
-      year: "2020",
+      {
+          year: "2025",
+          title: "Khơi nguồn",
+          description: "Ý tưởng LocalEats hình thành từ những chuyến đi tìm đặc sản, gom góp từng câu chuyện làng nghề để chuẩn bị cho hành trình dài hơi phía trước.",
+      },
+      {
+      year: "2026",
       title: "Khởi đầu",
-      description: "LocalEats được thành lập với sứ mệnh kết nối đặc sản Việt",
+      description: "LocalEats được thành lập với sứ mệnh kết nối đặc sản Đà Nẵng",
     },
     {
-      year: "2021",
+      year: "2027",
       title: "Mở rộng",
-      description: "Hợp tác với 100+ nông hộ trên 20 tỉnh thành",
+      description: "Hợp tác với 100+ hộ sản xuất/nghệ nhân tỉnh thành lân cận",
     },
     {
-      year: "2023",
+      year: "2028",
       title: "Phát triển",
-      description: "Ra mắt tính năng mua chung, giúp khách hàng tiết kiệm chi phí",
+      description: "Ra mắt tính năng mua chung giúp khách hàng tiết kiệm chi phí",
     },
     {
-      year: "2025",
-      title: "Hiện tại",
-      description: "500+ người làm, 1,200+ sản phẩm, 5,000+ khách hàng hài lòng",
+      year: "2029",
+      title: "Vững đà",
+      description: "Đội ngũ vượt mốc 5 thành viên, danh mục sản phẩm ngày càng đa dạng và cộng đồng khách hàng hơn trăm ngàn người vẫn tin chọn LocalEats mỗi ngày.",
     },
   ];
 
@@ -110,8 +126,7 @@ export default function About() {
                   Sứ mệnh
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Kết nối trực tiếp người tiêu dùng với người nông dân, nghệ nhân địa phương, 
-                  mang đến sản phẩm chất lượng cao với nguồn gốc rõ ràng và giá cả công bằng.
+                    "LocalEats kết nối người làm đặc sản và người thưởng thức, mang lại trải nghiệm mua sắm đáng tin cậy, hỗ trợ làng nghề và lan tỏa giá trị văn hóa Đà Nẵng”
                 </p>
                 <p className="text-lg text-muted-foreground">
                   Chúng tôi tin rằng khi bạn hiểu rõ nguồn gốc sản phẩm và con người đằng sau nó, 
@@ -124,12 +139,12 @@ export default function About() {
                   Tầm nhìn
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Trở thành nền tảng hàng đầu Việt Nam trong việc kết nối đặc sản địa phương 
+                  Trở thành nền tảng hàng đầu Miền Trung Việt Nam trong việc kết nối đặc sản địa phương
                   với người tiêu dùng, góp phần phát triển kinh tế nông thôn bền vững.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Trong 5 năm tới, chúng tôi hướng đến việc hợp tác với 5,000+ nông hộ 
-                  trên toàn quốc và phục vụ 100,000+ gia đình Việt.
+                  Trong 5 năm tới, chúng tôi hướng đến việc hợp tác với 5,000+ hộ sản xuất
+                  trên toàn Miền Trung và phục vụ 100,000+ gia đình Việt cũng như du khách du lịch.
                 </p>
               </div>
             </div>
@@ -241,7 +256,7 @@ export default function About() {
             </h2>
             <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
               Mỗi lần mua sắm tại LocalEats, bạn không chỉ nhận được sản phẩm chất lượng 
-              mà còn góp phần hỗ trợ trực tiếp người nông dân, nghệ nhân địa phương.
+              mà còn góp phần hỗ trợ trực tiếp hộ sản xuất, nghệ nhân địa phương.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
