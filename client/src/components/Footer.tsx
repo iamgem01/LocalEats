@@ -23,7 +23,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" data-testid="button-facebook">
-                <Facebook className="h-4 w-4" />
+                  <a
+                      href="https://www.facebook.com/profile.php?id=61584900144559"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+                      <Facebook className="h-4 w-4" />
+                  </a>
               </Button>
               <Button variant="outline" size="icon" data-testid="button-instagram">
                 <Instagram className="h-4 w-4" />
@@ -67,11 +73,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>123 Đường Hùng Vương, Đà Nẵng</span>
+                <span>Nguyễn Lương Bằng,Liên Chiểu, Đà Nẵng</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>0236 123 4567</span>
+                <span>0358574219</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" />

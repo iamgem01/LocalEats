@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -5,6 +6,7 @@ import FarmerCard from "@/components/FarmerCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+
 import {
   Select,
   SelectContent,
@@ -15,92 +17,117 @@ import {
 
 // Import images
 import honeyFarmerImage from "@assets/generated_images/Vietnamese_honey_farmer_portrait_82a0dfd5.png";
-import basketArtisanImage from "@assets/generated_images/Vietnamese_basket_weaving_artisan_1bb90a2f.png";
-import riceTerraceImage from "@assets/generated_images/Vietnamese_rice_terraces_farmer_fb8b00e8.png";
+
 import coffeeImage from "@assets/generated_images/Vietnamese_coffee_farmer_working_e7265474.png";
 
+// Import images
+import veggiesImage from "@assets/generated_images/Fresh_Vietnamese_market_vegetables_5b6cbbbf.png";
+import MucImage from "@assets/generated_images/MucRimMe.png";
+import CaBoImage from "@assets/generated_images/CaBo.png";
+import BaTamImage from "@assets/generated_images/BaTam.png";
+import MienBacImage from "@assets/generated_images/MienBac.png";
+import ComImage from "@assets/generated_images/Com.png";
+import ChaBoImage from "@assets/generated_images/ChaBo.png";
+import basketArtisanImage from "@assets/generated_images/Vietnamese_basket_weaving_artisan_1bb90a2f.png";
+import riceTerraceImage from "@assets/generated_images/img.png";
+import MienTrung from "@assets/generated_images/img_1.png";
+import MamNem from "@assets/generated_images/MamNem.png";
+import NamO from "@assets/generated_images/TranNgocVinh.png";
+import Sol from "@assets/generated_images/HuynhDucSol.png";
+
 export default function Farmers() {
-  const [searchQuery, setSearchQuery] = useState("");
+    const [, setLocation] = useLocation();
+
+    const [searchQuery, setSearchQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("all");
 
-  // todo: remove mock functionality
-  const allFarmers = [
-    {
-      id: 1,
-      name: "Anh Tuấn",
-      photo: honeyFarmerImage,
-      location: "Đà Lạt, Lâm Đồng",
-      specialty: "Mật ong rừng",
-      productCount: 8,
-      bio: "20 năm kinh nghiệm nuôi ong lấy mật từ hoa rừng tự nhiên, cam kết 100% nguyên chất không pha trộn",
-    },
-    {
-      id: 2,
-      name: "Chị Mai",
-      photo: basketArtisanImage,
-      location: "Hội An, Quảng Nam",
-      specialty: "Thủ công mỹ nghệ",
-      productCount: 12,
-      bio: "Nghệ nhân làng nghề truyền thống, chuyên đan lát tre nứa theo kỹ thuật gia truyền 3 đời",
-    },
-    {
-      id: 3,
-      name: "Anh Minh",
-      photo: riceTerraceImage,
-      location: "Sa Pa, Lào Cai",
-      specialty: "Gạo hữu cơ",
-      productCount: 5,
-      bio: "Canh tác ruộng bậc thang theo phương pháp truyền thống, không sử dụng hóa chất",
-    },
-    {
-      id: 4,
-      name: "Anh Hùng",
-      photo: coffeeImage,
-      location: "Buôn Ma Thuột, Đắk Lắk",
-      specialty: "Cà phê Arabica",
-      productCount: 15,
-      bio: "Gia đình trồng cà phê từ năm 1975, chuyên về cà phê Arabica chất lượng cao",
-    },
-    {
-      id: 5,
-      name: "Chị Lan",
-      photo: basketArtisanImage,
-      location: "Phan Thiết, Bình Thuận",
-      specialty: "Trái cây",
-      productCount: 10,
-      bio: "Vườn thanh long 5 hecta, áp dụng công nghệ VietGAP trong canh tác",
-    },
-    {
-      id: 6,
-      name: "Anh Dũng",
-      photo: honeyFarmerImage,
-      location: "Hà Giang",
-      specialty: "Chè Shan Tuyết",
-      productCount: 6,
-      bio: "Chăm sóc vườn chè cổ thủ hàng trăm năm tuổi, sản xuất theo phương pháp hữu cơ",
-    },
-    {
-      id: 7,
-      name: "Chị Hoa",
-      photo: riceTerraceImage,
-      location: "Sóc Trăng",
-      specialty: "Gạo ST25",
-      productCount: 4,
-      bio: "Nông dân trồng gạo ST25 đạt giải thưởng gạo ngon nhất thế giới",
-    },
-    {
-      id: 8,
-      name: "Anh Phúc",
-      photo: coffeeImage,
-      location: "Cà Mau",
-      specialty: "Hải sản",
-      productCount: 18,
-      bio: "Nuôi tôm sinh thái và đánh bắt hải sản tươi sống, đảm bảo nguồn gốc rõ ràng",
-    },
-  ];
 
-  const filteredFarmers = allFarmers.filter((farmer) => {
+    // todo: remove mock functionality
+    const allFarmers = [
+        {
+            id: 1,
+            name: "Bà Tâm",
+            photo: BaTamImage,
+            location: "Thuận Phước, Hải Châu, Đà Nẵng",
+            specialty: "Chả bò, nem, tré",
+            productCount: 8,
+            bio: "Nhiều năm làm nghề chế biến đặc sản Đà Nẵng — nổi tiếng với chả bò loại 1, tré và nem đặc sản.",
+        },
+
+        {
+            id: 2,
+            name: "Cơ sở Bà Liễu",
+            photo: Sol,
+            location: "Cẩm Lệ, Đà Nẵng",
+            specialty: "Bánh khô mè",
+            productCount: 12,
+            bio: "Làng nghề bánh khô mè hơn 70 năm, giữ lửa hương vị truyền thống với mè rang và đường mạch nha.",
+        },
+
+        {
+            id: 3,
+            name: "Dì Danh",
+            photo: basketArtisanImage,
+            location: "Đà Nẵng",
+            specialty: "Mực rim me",
+            productCount: 6,
+            bio: "Chế biến các món hải sản khô đặc trưng miền Trung, nổi bật với mực rim me chuẩn vị đường, tỏi, ớt.",
+        },
+
+        {
+            id: 4,
+            name: "Dì Cẩn",
+            photo: riceTerraceImage,
+            location: "Đà Nẵng",
+            specialty: "Mắm nêm",
+            productCount: 4,
+            bio: "Làm mắm nêm theo phương pháp truyền thống — hương vị đặc trưng dùng chế biến nhiều món ngon Đà Nẵng.",
+        },
+
+        {
+            id: 5,
+            name: "Làng nghề Túy Loan",
+            photo: basketArtisanImage,
+            location: "Hòa Vang, Đà Nẵng",
+            specialty: "Bánh tráng Túy Loan",
+            productCount: 10,
+            bio: "Làng nghề hơn 500 năm tuổi, nổi tiếng với bánh tráng dày, thơm, nướng giòn đặc trưng.",
+        },
+
+        {
+            id: 6,
+            name: "Cơ sở Nam Ô",
+            photo: NamO,
+            location: "Nam Ô, Liên Chiểu, Đà Nẵng",
+            specialty: "Nước mắm Nam Ô",
+            productCount: 12,
+            bio: "30 năm làm nước mắm cá cơm than ủ chượp truyền thống — được cấp nhãn hiệu tập thể và bảo hộ chỉ dẫn địa lý Nam Ô.",
+        },
+
+        {
+            id: 7,
+            name: "Hộ làm khô cá một nắng",
+            photo: honeyFarmerImage,
+            location: "Sơn Trà, Đà Nẵng",
+            specialty: "Hải sản khô",
+            productCount: 7,
+            bio: "Chuyên làm cá một nắng, mực một nắng từ nguồn hải sản địa phương tươi mới mỗi ngày.",
+        },
+
+        {
+            id: 8,
+            name: "Cơ sở Bánh Đậu Xanh Cẩm Lệ",
+            photo: coffeeImage,
+            location: "Cẩm Lệ, Đà Nẵng",
+            specialty: "Bánh đậu xanh khô",
+            productCount: 5,
+            bio: "Sản xuất bánh đậu xanh truyền thống — vị ngọt thanh, thơm bùi, phù hợp làm quà biếu.",
+        },
+    ];
+
+
+    const filteredFarmers = allFarmers.filter((farmer) => {
     const matchesSearch =
       farmer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       farmer.specialty.toLowerCase().includes(searchQuery.toLowerCase());
@@ -122,7 +149,7 @@ export default function Farmers() {
               Gặp gỡ người làm
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Những người nông dân, nghệ nhân tận tâm đằng sau mỗi sản phẩm đặc sản. 
+              Những hộ sản xuất, nghệ nhân tận tâm đằng sau mỗi sản phẩm đặc sản.
               Mỗi người đều có câu chuyện riêng về đam mê và nghề nghiệp.
             </p>
           </div>
@@ -145,41 +172,63 @@ export default function Farmers() {
                 />
               </div>
 
-              {/* Region Filter */}
-              <Select value={selectedRegion} onValueChange={setSelectedRegion}>
-                <SelectTrigger className="w-full md:w-[200px]" data-testid="select-region">
-                  <SelectValue placeholder="Khu vực" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Tất cả khu vực</SelectItem>
-                  <SelectItem value="Đà Lạt">Đà Lạt</SelectItem>
-                  <SelectItem value="Hội An">Hội An</SelectItem>
-                  <SelectItem value="Sa Pa">Sa Pa</SelectItem>
-                  <SelectItem value="Buôn Ma Thuột">Buôn Ma Thuột</SelectItem>
-                  <SelectItem value="Phan Thiết">Phan Thiết</SelectItem>
-                  <SelectItem value="Hà Giang">Hà Giang</SelectItem>
-                  <SelectItem value="Sóc Trăng">Sóc Trăng</SelectItem>
-                  <SelectItem value="Cà Mau">Cà Mau</SelectItem>
-                </SelectContent>
-              </Select>
+                {/* Region Filter */}
+                <Select value={selectedRegion} onValueChange={setSelectedRegion}>
+                    <SelectTrigger className="w-full md:w-[200px]" data-testid="select-region">
+                        <SelectValue placeholder="Khu vực" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="all">Tất cả</SelectItem>
+                        <SelectItem value="Hòa Vang">Hòa Vang</SelectItem>
+                        <SelectItem value="Liên Chiểu">Liên Chiểu</SelectItem>
+                        <SelectItem value="Hải Châu">Hải Châu</SelectItem>
+                        <SelectItem value="Sơn Trà">Sơn Trà</SelectItem>
+                        <SelectItem value="Thanh Khê">Thanh Khê</SelectItem>
+                        <SelectItem value="Cẩm Lệ">Cẩm Lệ</SelectItem>
+                        <SelectItem value="Ngũ Hành Sơn">Ngũ Hành Sơn</SelectItem>
+                        <SelectItem value="Hòa Cường">Hòa Cường</SelectItem>
+                        <SelectItem value="Hòa Khánh">Hòa Khánh</SelectItem>
+                        <SelectItem value="Hải Vân">Hải Vân</SelectItem>
+                        <SelectItem value="Hòa Xuân">Hòa Xuân</SelectItem>
+                        <SelectItem value="An Khê">An Khê</SelectItem>
+                        <SelectItem value="An Hải">An Hải</SelectItem>
 
-              {/* Specialty Filter */}
-              <Select value={selectedSpecialty} onValueChange={setSelectedSpecialty}>
-                <SelectTrigger className="w-full md:w-[200px]" data-testid="select-specialty">
-                  <SelectValue placeholder="Chuyên môn" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Tất cả chuyên môn</SelectItem>
-                  <SelectItem value="Mật ong rừng">Mật ong rừng</SelectItem>
-                  <SelectItem value="Thủ công mỹ nghệ">Thủ công mỹ nghệ</SelectItem>
-                  <SelectItem value="Gạo hữu cơ">Gạo hữu cơ</SelectItem>
-                  <SelectItem value="Cà phê Arabica">Cà phê Arabica</SelectItem>
-                  <SelectItem value="Trái cây">Trái cây</SelectItem>
-                  <SelectItem value="Chè Shan Tuyết">Chè Shan Tuyết</SelectItem>
-                  <SelectItem value="Gạo ST25">Gạo ST25</SelectItem>
-                  <SelectItem value="Hải sản">Hải sản</SelectItem>
-                </SelectContent>
-              </Select>
+                        {/* Ngoài Đà Nẵng */}
+                        <SelectItem value="Tam Kỳ">Tam Kỳ</SelectItem>
+                        <SelectItem value="Bàn Thạch">Bàn Thạch</SelectItem>
+                        <SelectItem value="Hương Trà">Hương Trà</SelectItem>
+                        <SelectItem value="Điện Bàn">Điện Bàn</SelectItem>
+                        <SelectItem value="An Thắng">An Thắng</SelectItem>
+                        <SelectItem value="Hội An">Hội An</SelectItem>
+
+                        {/* Các xã */}
+                        <SelectItem value="Hòa Tiến">Hòa Tiến</SelectItem>
+                        <SelectItem value="Bà Nà">Bà Nà</SelectItem>
+
+                        {/* Đặc khu */}
+                        <SelectItem value="Hoàng Sa">Hoàng Sa</SelectItem>
+
+                    </SelectContent>
+                </Select>
+
+                {/* Specialty Filter */}
+                <Select value={selectedSpecialty} onValueChange={setSelectedSpecialty}>
+                    <SelectTrigger className="w-full md:w-[200px]" data-testid="select-specialty">
+                        <SelectValue placeholder="Chuyên môn" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="all">Tất cả chuyên môn</SelectItem>
+                        <SelectItem value="Chả bò, nem, tré">Chả bò, nem, tré</SelectItem>
+                        <SelectItem value="Bánh khô mè">Bánh khô mè</SelectItem>
+                        <SelectItem value="Mực rim me">Mực rim me</SelectItem>
+                        <SelectItem value="Mắm nêm">Mắm nêm</SelectItem>
+                        <SelectItem value="Bánh tráng Túy Loan">Bánh tráng Túy Loan</SelectItem>
+                        <SelectItem value="Nước mắm Nam Ô">Nước mắm Nam Ô</SelectItem>
+                        <SelectItem value="Hải sản khô">Hải sản khô</SelectItem>
+                        <SelectItem value="Bánh đậu xanh khô">Bánh đậu xanh khô</SelectItem>
+                    </SelectContent>
+                </Select>
+
             </div>
           </div>
         </section>
@@ -189,15 +238,15 @@ export default function Farmers() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                <div className="text-sm text-muted-foreground">Người làm</div>
+                <div className="text-3xl font-bold text-primary mb-1">5+</div>
+                <div className="text-sm text-muted-foreground">Hộ sản xuất</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">63</div>
-                <div className="text-sm text-muted-foreground">Tỉnh thành</div>
+                <div className="text-3xl font-bold text-primary mb-1">23</div>
+                <div className="text-sm text-muted-foreground">Phường</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">1,200+</div>
+                <div className="text-3xl font-bold text-primary mb-1">25+</div>
                 <div className="text-sm text-muted-foreground">Sản phẩm</div>
               </div>
               <div className="text-center">
@@ -266,13 +315,15 @@ export default function Farmers() {
             <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
               Tham gia LocalEats để kết nối sản phẩm của bạn với hàng ngàn khách hàng trên toàn quốc.
             </p>
-            <Button
-              size="lg"
-              variant="secondary"
-              data-testid="button-join-as-farmer"
-            >
-              Đăng ký làm người bán
-            </Button>
+              <Button
+                  size="lg"
+                  variant="secondary"
+                  data-testid="button-join-as-farmer"
+                  onClick={() => setLocation("/signup-seller")}
+              >
+                  Đăng ký làm người bán
+              </Button>
+
           </div>
         </section>
       </main>

@@ -24,7 +24,7 @@ export default function GroupBuyBanner() {
               Mua chung - Tiết kiệm vận chuyển
             </h3>
             <p className="text-muted-foreground mb-4">
-              Giỏ hàng của bạn có 2 sản phẩm từ <span className="font-semibold text-foreground">Đà Lạt</span>. 
+              Giỏ hàng của bạn có 2 sản phẩm từ <span className="font-semibold text-foreground">Đà Nẵng</span>.
               Tham gia mua chung để tiết kiệm tới <span className="font-semibold text-secondary">40%</span> phí ship!
             </p>
 

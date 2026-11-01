@@ -8,6 +8,14 @@ import Products from "@/pages/Products";
 import Farmers from "@/pages/Farmers";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
+import ProductDetail from "@/pages/ProductDetail.tsx";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Singup";
+import SignupSeller from "@/pages/SellerSignup";
+
+import Dashboard from "@/pages/dashboard/page.tsx";
+import Checkout from "@/pages/Checkout"
+import { LanguageProvider } from "@/lib/useLanguage"
 
 function Router() {
   return (
@@ -16,7 +24,16 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/farmers" component={Farmers} />
       <Route path="/about" component={About} />
-      <Route component={NotFound} />
+        <Route path= "/product/:id" component= {ProductDetail} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signup-seller" component={SignupSeller} />
+
+        <Route path="/home" component={Dashboard} />
+        <Route path="/checkout" component={Checkout} />
+
+
+        <Route component={NotFound} />
     </Switch>
   );
 }
@@ -24,10 +41,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <LanguageProvider>
+          <TooltipProvider>
+              <Toaster />
+              <Router />
+          </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

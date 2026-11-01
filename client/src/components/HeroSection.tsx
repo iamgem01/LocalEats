@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@assets/generated_images/Vietnamese_rice_terraces_farmer_fb8b00e8.png";
+import heroImage from "@assets/generated_images/coverrr.png";
 
 export default function HeroSection() {
   return (
@@ -29,13 +29,13 @@ export default function HeroSection() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-white mb-6 leading-tight">
-            Xem Tận Mắt,{" "}
-            <span className="text-primary">Mua Tận Gốc</span>
+              Chuẩn nguồn gốc, {" "}
+            <span className="text-primary">trọn an tâm.</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl">
-            Kết nối bạn trực tiếp với người nông dân, nghệ nhân. Mỗi sản phẩm đều có câu chuyện, 
+            Kết nối bạn trực tiếp với người làm đặc sản, nghệ nhân. Mỗi sản phẩm đều có câu chuyện,
             mỗi hương vị đều chân thật.
           </p>
 
@@ -67,8 +67,8 @@ export default function HeroSection() {
             <div className="flex items-center gap-2 text-white/80">
               <div className="h-8 w-px bg-white/30" />
               <div>
-                <div className="text-2xl font-bold text-white">500+</div>
-                <div className="text-sm">Nông hộ</div>
+                <div className="text-2xl font-bold text-white">100+</div>
+                <div className="text-sm">Hộ sản xuất/ Nghệ nhân</div>
               </div>
             </div>
             <div className="flex items-center gap-2 text-white/80">
