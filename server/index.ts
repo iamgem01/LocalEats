@@ -97,11 +97,11 @@ const findAvailablePort = async (startPort: number): Promise<number> => {
             port: availablePort,
             host: "127.0.0.1",
         }, () => {
-            log(`🚀 Server is running on http://127.0.0.1:${availablePort}`);
-            log(`📱 API available at http://127.0.0.1:${availablePort}/api`);
+            log(`Server is running on http://127.0.0.1:${availablePort}`);
+            log(`API available at http://127.0.0.1:${availablePort}/api`);
 
             if (app.get("env") === "development") {
-                log(`👨‍💻 Dev server ready`);
+                log(`Dev server ready`);
             }
         });
 
